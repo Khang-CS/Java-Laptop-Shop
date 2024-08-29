@@ -28,7 +28,7 @@ public class UserController {
         List<User> arrUsers = this.userService.getAllUsersByEmail("quizz.kn@gmail.com");
         System.out.println(arrUsers);
         model.addAttribute("eric", "test");
-        model.addAttribute("hoidanit", "from controller with model");
+        model.addAttribute("hoidanit2", "from controller with model");
         return "hello";
     }
 
