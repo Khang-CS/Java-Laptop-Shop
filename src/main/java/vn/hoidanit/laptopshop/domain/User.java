@@ -19,6 +19,16 @@ public class User {
     private String address;
     private String phone;
 
+    private String avatar;
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public long getId() {
         return id;
     }
