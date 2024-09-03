@@ -24,9 +24,33 @@
                             <h1 class="mt-4">Dashboard</h1>
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Order</li>
+                                <li class="breadcrumb-item active"><a href="/admin/user">User</a></li>
+                                <li class="breadcrumb-item active">${user.fullName}</li>
                             </ol>
-                            <div>ORDER</div>
+                            <div class="mt-5">
+                                <div class="row">
+                                    <div class="col-12 mx-auto">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>User Detail</h3>
+                                            <a href="/admin/user" class="btn btn-warning">View all Users</a>
+                                        </div>
+
+                                        <hr />
+
+                                        <div class="card" style="width: 18rem;" style="margin: auto;">
+                                            <div class="card-body">
+                                                User Information
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">ID: ${user.fullName}</li>
+                                                <li class="list-group-item">FullName: ${user.fullName}</li>
+                                                <li class="list-group-item">Email: ${user.email}</li>
+                                                <li class="list-group-item">Address: ${user.address}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </main>
                     <jsp:include page="../layout/footer.jsp" />

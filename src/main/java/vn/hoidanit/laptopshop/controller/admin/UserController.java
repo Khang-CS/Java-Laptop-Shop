@@ -1,4 +1,4 @@
-package vn.hoidanit.laptopshop.controller;
+package vn.hoidanit.laptopshop.controller.admin;
 
 import java.util.List;
 
@@ -23,21 +23,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping("/")
-    public String getHomePage(Model model) {
-        List<User> arrUsers = this.userService.getAllUsersByEmail("quizz.kn@gmail.com");
-        System.out.println(arrUsers);
-        model.addAttribute("eric", "test");
-        model.addAttribute("hoidanit2", "from controller with model");
-        return "hello";
-    }
-
     @RequestMapping("/admin/user")
     public String getUserPage(Model model) {
         List<User> users = this.userService.getAllUser();
         System.out.println("check users: " + users);
         model.addAttribute("users", users);
-        return "admin/user/table-user";
+        return "admin/user/show";
     }
 
     @RequestMapping("/admin/user/{id}")
@@ -45,14 +36,14 @@ public class UserController {
         User user = this.userService.getUserById(id);
         model.addAttribute("user", user);
         model.addAttribute("id", id);
-        return "admin/user/user-detail";
+        return "admin/user/detail";
     }
 
     @RequestMapping("/admin/user/update/{id}")
     public String getUserUpdatePage(Model model, @PathVariable long id) {
         User oldUser = this.userService.getUserById(id);
         model.addAttribute("updateUser", oldUser);
-        return "admin/user/user-update";
+        return "admin/user/update";
     }
 
     @RequestMapping(value = "/admin/user/update", method = RequestMethod.POST)
@@ -73,9 +64,8 @@ public class UserController {
 
     @RequestMapping("/admin/user/delete/{id}")
     public String getDeleteUserPage(Model model, @PathVariable long id) {
-        System.out.println("DELETE: " + id);
         model.addAttribute("id", id);
-        return "/admin/user/delete-user";
+        return "/admin/user/delete";
     }
 
     @PostMapping("/admin/user/delete/action/{id}")

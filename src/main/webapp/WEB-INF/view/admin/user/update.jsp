@@ -27,26 +27,30 @@
                                     <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
                                     <li class="breadcrumb-item active">User</li>
                                 </ol>
-                                <div class="container mt-5">
+                                <div>
                                     <div class="row">
                                         <div class="col-md-6 col-12 mx-auto">
-                                            <h3>Create a user</h3>
+                                            <h3>Update User</h3>
                                             <hr />
-                                            <form:form method="post" action="/admin/user/create"
-                                                modelAttribute="newUser">
-                                                <div class="mb-3">
+                                            <form:form method="post" action="/admin/user/update"
+                                                modelAttribute="updateUser">
+                                                <div class="mb-2">
+                                                    <label class="form-label">ID:</label>
+                                                    <form:input type="text" class="form-control" path="id" />
+                                                </div>
+                                                <div class=" mb-2">
                                                     <label class="form-label">Email:</label>
                                                     <form:input type="email" class="form-control" path="email" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-2">
                                                     <label class="form-label">Password:</label>
-                                                    <form:input type="password" class="form-control" path="password" />
+                                                    <form:input type="text" class="form-control" path="password" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-2">
                                                     <label class="form-label">Phone number:</label>
                                                     <form:input type="text" class="form-control" path="phone" />
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-2">
                                                     <label class="form-label">Full Name:</label>
                                                     <form:input type="text" class="form-control" path="fullName" />
                                                 </div>
@@ -55,7 +59,7 @@
                                                     <form:input type="text" class="form-control" path="address" />
                                                 </div>
 
-                                                <button type="submit" class="btn btn-primary">Create</button>
+                                                <button type="submit" class="btn btn-warning">Update</button>
                                             </form:form>
 
                                         </div>
